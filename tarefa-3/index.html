@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maior de Idade</title>
+</head>
+<body>
+    <h1>Verificar Maior de Idade</h1>
+    <label for="idades">Digite idades separadas por vírgula:</label>
+    <input type="text" id="idades">
+    <button onclick="verificarIdades()">Verificar</button>
+    <p>Pessoas maiores de idade: <span id="maiores"></span></p>
+    <p>Pessoas menores de idade: <span id="menores"></span></p>
+    <script>
+        function verificarIdades() {
+            const idades = document.getElementById("idades").value.split(",").map(parseFloat);
+            const maiores = idades.filter(idade => idade >= 18);
+            const menores = idades.filter(idade => idade < 18);
+            document.getElementById("maiores").textContent = maiores.length;
+            document.getElementById("menores").textContent = menores.length;
+        }
+    </script>
+</body>
+</html>

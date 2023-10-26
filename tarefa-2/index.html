@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maior Número</title>
+</head>
+<body>
+    <h1>Encontrar o Maior Número</h1>
+    <label for="numeros">Digite 5 números separados por vírgula:</label>
+    <input type="text" id="numeros">
+    <button onclick="encontrarMaiorNumero()">Encontrar Maior Número</button>
+    <p>O maior número é: <span id="resultado"></span></p>
+    <script>
+        function encontrarMaiorNumero() {
+            const numeros = document.getElementById("numeros").value.split(",").map(parseFloat);
+            const maiorNumero = Math.max(...numeros);
+            document.getElementById("resultado").textContent = maiorNumero;
+        }
+    </script>
+</body>
+</html>
